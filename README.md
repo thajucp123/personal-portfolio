@@ -186,6 +186,7 @@ This is a list of useful resources and libraries I've used in my project. I've i
 * [React Bootstrap](https://react-bootstrap.netlify.app/)
 * [Bootsrap Icons](https://icons.getbootstrap.com/)
 * [React Parallax Tilt](https://github.com/mkosir/react-parallax-tilt/)
+* [Dev Icons](https://devicon.dev/) - set of icons representing programming languages, designing, and development tools
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
 

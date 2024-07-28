@@ -49,8 +49,8 @@ function Banner() {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                     <span className="tagline">Welcome to my portfolio</span>
-                    <h1>{`Hi, I'm Thajudeen, `}<br/>{`a `}<span className="wrap">{title}</span></h1>
-                    <p>I&apos;m a passionate full-stack web developer with a background in Computer Science. 
+                    <h1>{`Hi, I'm Thajudeen, `}<br/>{`a `}<span className="wrap flow">{title}</span></h1>
+                    <p>Greetings, Traveler! Enter the Realm of the Coding Wizard. I&apos;m a passionate full-stack web developer with a background in Computer Science. 
                     I&apos;m currently working as a Full Stack Developer at <a href="https://www.aes-inspection.com/" target="_blank" rel="noreferrer">AES</a> and I&apos;m looking for new opportunities.
                     </p>
                     <button onClick={()=>{console.log("main connect button click")}} className="vvd"><a className="no-style-a"><span>Let&apos;s Connect <ArrowRightCircle size={25}/></span></a></button>

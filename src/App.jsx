@@ -5,6 +5,7 @@ import Banner from './components/Banner'
 import NavBar from './components/NavBar'
 import Preloader from './components/Preloader/Preloader'
 import { CursorSpotLight } from './components/CursorSpotLight/CursorSpotLight';
+import Skills from './components/Skills';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,7 @@ function App() {
          <CursorSpotLight/>
          <NavBar/>
          <Banner/>
+         <Skills/>
         </>
        )}
       

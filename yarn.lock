@@ -2156,6 +2156,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-parallax-tilt@^1.7.234:
+  version "1.7.234"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.234.tgz#fe411d307b0a2c6659bb7302669040bec4490add"
+  integrity sha512-/53zDaXwDDXBc3J/k6/voqxKqyX9f6naPl8VilWRcWSvGxkyj6Wb6p57WJuj9EhVYHWwu84ructJvw8RlBB3Ng==
+
 react-refresh@^0.14.2:
   version "0.14.2"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"

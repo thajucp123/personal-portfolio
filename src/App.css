@@ -48,6 +48,13 @@ body {
   font-family: 'Centra', sans-serif !important;
 }
 
+@media only screen and (max-width: 768px) {
+  /* Styles here will only apply to screens with a maximum width of 768px */
+  body {
+    max-width: 100vb;
+  }
+}
+
 /*logo image*/
 
 .logo-img {
@@ -362,7 +369,7 @@ border-color: transparent;
   margin-bottom: 20px;
   display: block;
   overflow: visible;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   animation: fadein 7s;
 }
 @media only screen and (max-width: 768px) {
@@ -371,6 +378,49 @@ border-color: transparent;
   height: 210px;
   }
 }
+
+/*for gradient color animation of title text*/
+.flow {
+  color: #ffffff;
+  
+  background-image: linear-gradient( 35deg, #00ffaa 25%, #e2f973 60%, #51e202 100%);
+  background-size: 200% auto;
+  
+          background-clip: text;
+  -webkit-background-clip: text;
+
+          text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
+          
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+          animation: flow 5s ease-in-out infinite;
+  -webkit-animation: flow 5s ease-in-out infinite;
+}
+  
+@-webkit-keyframes flow {
+    0%{background-position:0% 50%}
+    24%{background-position:66% 20%}
+    50%{background-position:100% 50%}
+    75%{background-position:72% 60%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes flow {
+    0%{background-position:0% 50%}
+    24%{background-position:66% 20%}
+    50%{background-position:100% 50%}
+    75%{background-position:72% 60%}
+    100%{background-position:0% 50%}
+}
+@keyframes flow {
+    0%{background-position:0% 50%}
+    24%{background-position:66% 20%}
+    50%{background-position:100% 50%}
+    75%{background-position:72% 60%}
+    100%{background-position:0% 50%}
+}
+
 .banner p {
   color: #eae8e8;
   font-size: 18px;
@@ -425,6 +475,20 @@ border-color: transparent;
 }
 @keyframes updown {
     0% {
+        transform: translateY(-25px);
+    }
+    50% {
+        transform: translateY(25px);
+        transform: translateX(25px);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  @keyframes updown {
+    0% {
         transform: translateY(-20px);
     }
     50% {
@@ -434,6 +498,99 @@ border-color: transparent;
         transform: translateY(-20px);
     }
 }
+}
+
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+
+/************ Skills Css ************/
+.skill {
+  padding: 0 0 50px 0;
+  margin-top: -60px;
+  display: flex;
+  justify-content: center;
+}
+.skill-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+ .skill-bx {
+  width: 90%;
+  padding: 30px 30px;
+  }
+}
+
+.skill-tilt-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+ .skill-tilt-area {
+  gap: 15px;
+  }
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  justify-content: center;
+  background-color: #3d3d3b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+ .skill-item {
+  width: 120px;
+  }
+}
+
+.glowing::before{
+  content: '';
+  position: absolute;
+  background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+  background-size: 400%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 20px;
+  filter: blur(3px);
+  z-index: -1;
+  animation: glower 20s linear infinite;
+}
+
+@keyframes glower {
+  0% {
+    background-position: 0 0;
+  }
+  
+  50% {
+    background-position: 400% 0;
+  }
+  
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.skill-item h5 {
+  all: unset;
+  letter-spacing: 0.8px;
+  line-height: 1.2em;
+  padding-top: 10px;
+  color: #fff;
 }
