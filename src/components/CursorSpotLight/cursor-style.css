@@ -1,0 +1,42 @@
+
+
+a{
+	
+	cursor: var(--cursorImg), pointer;
+	
+}
+
+.spotlight {
+    --scale: 1;
+    --x: 0;
+    --y: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translate3d(var(--x), var(--y), 0);
+  }
+  
+  .spotlight-inner {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    opacity: 0;
+    background-color: #d800f0;
+    filter: blur(3px);
+    transform: scale(0);
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .spotlight-move .spotlight-inner {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .spotlight-hover .spotlight-inner {
+    transform: scale(var(--scale));
+    opacity: 1;
+  }
