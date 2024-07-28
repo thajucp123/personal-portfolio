@@ -513,7 +513,9 @@ border-color: transparent;
   justify-content: center;
 }
 .skill-bx {
-  background: #151515;
+  background: radial-gradient(ellipse at center, #43cea2, #185a9d);
+  /*background: radial-gradient(circle at center, #232526, #414345);*/
+  /*background: radial-gradient(ellipse at center, #141e30, #243b55);*/
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
