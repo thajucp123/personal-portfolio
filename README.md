@@ -189,6 +189,7 @@ This is a list of useful resources and libraries I've used in my project. I've i
 * [Dev Icons](https://devicon.dev/) - set of icons representing programming languages, designing, and development tools
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
+* [Codepen](https://codepen.io/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,12 +202,11 @@ This is a list of useful resources and libraries I've used in my project. I've i
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/thaju-fakrudheen
+[linkedin-url]: https://linkedin.com/in/thaju-fakrudheen
 [product-screenshot]: images/screenshot.png
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-
 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com

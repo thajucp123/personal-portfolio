@@ -76,6 +76,14 @@ body {
   }
 }
 
+
+/*To hide an element only oon mobile screens*/
+@media only screen and (max-width: 768px) {
+.mobile-hide {
+    display: none;
+  }
+}
+
 .no-style-a {
   all: unset;
   display: inline-block;
@@ -343,7 +351,7 @@ border-color: transparent;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: fadein 4s;
+  animation: fadein 1.5s;
 }
 @keyframes fadein {
   0% { opacity: 0; }
@@ -535,7 +543,7 @@ border-color: transparent;
 .skill-tilt-area {
   display: flex;
   flex-wrap: wrap;
-  gap: 90px;
+  gap: 30px;
   justify-content: space-between;
 }
 
