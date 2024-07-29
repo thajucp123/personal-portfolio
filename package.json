@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@popperjs/core": "^2.11.8",
+    "@svgdotjs/svg.js": "^3.2.4",
     "bootstrap": "^5.3.3",
     "bootstrap-sass": "^3.4.3",
     "compass-mixins": "^0.12.12",
