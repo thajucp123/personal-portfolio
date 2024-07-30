@@ -1,21 +1,7 @@
-
-import { useRef } from'react';
 import Carousel from 'react-bootstrap/Carousel';
 const About = ()=> {
 
-    const carouselRef = useRef(null);
-
-    const handleMouseDown = () => {
-      if (carouselRef.current) {
-        carouselRef.current.pause();
-      }
-    };
-  
-    const handleMouseUp = () => {
-      if (carouselRef.current) {
-        carouselRef.current.cycle();
-      }
-    };
+    
 
  return(
     <div className="About">
@@ -30,9 +16,8 @@ const About = ()=> {
     
     <h3 className='journey'>My Journey</h3>
 
-    <Carousel fade={true} interval={2000} controls={true} indicators={true} pause={false} ref={carouselRef}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp} className='carousal-container'>
+    <Carousel fade={true} interval={4000} controls={true} indicators={true} pause={false}
+      className="carousal-container">
       <Carousel.Item>
         <div className="carousel-item-content">
         <p>My journey began in the realm of MERN (MongoDB, Express.js, React, Node.js), where I mastered the art of full-stack development. Here, I learned to weave intricate web applications, seamlessly connecting the front-end and back-end with the power of JavaScript.

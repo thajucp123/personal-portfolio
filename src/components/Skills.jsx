@@ -1,8 +1,11 @@
 import Tilt from 'react-parallax-tilt'; //a library for easy tilt components
 const Skills = () => {
+
     return (
+
+        <>
         <section className='skill'>
-        <div className='skill-bx'>
+        <div className='skill-bx animate'>
         <h2 className='flow'  id="skills">Bag of Digital Tricks</h2>
         <br/>
         <p>Every wizard has their arsenal of spells, and I am no exception. Here are the magical languages <br/>
@@ -125,6 +128,7 @@ const Skills = () => {
         </div>
         </div>
         </section>
+        </>
     )
 }
 

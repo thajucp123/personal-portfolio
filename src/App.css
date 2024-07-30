@@ -63,6 +63,18 @@ body {
   width: 25%;
   height: auto;
   align-content: baseline;
+  animation: 1.7s zoomIn;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -185,7 +197,20 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 span.navbar-text {
   display: flex;
   align-items: center;
+  animation: dropIn 1s forwards;
 }
+
+@keyframes dropIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .social-icon {
   display: inline-block;
   margin-left: 14px;
@@ -358,6 +383,23 @@ border-color: transparent;
   100% { opacity: 1; }
 }
 
+.banner-left {
+  animation: 1s slideInLeft ease-in;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    filter: blur(80%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0%);
+  }
+}
+
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -475,11 +517,19 @@ border-color: transparent;
 }
 .banner img {
   width: 100%;
-  animation: easein 5s ease-out, updown 3s linear infinite;
+  animation: slideInRight 3s, updown 3s linear infinite 3s;
 }
-@keyframes easein {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur(100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0%);
+  }
 }
 @keyframes updown {
     0% {
@@ -531,6 +581,21 @@ border-color: transparent;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.animate {
+  animation: 5s slideInBottom ease-in;
+}
+
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -665,6 +730,13 @@ border-color: transparent;
   overflow: visible;
 }
 
+@media only screen and (max-width: 768px) {
+ .carousal-container {
+  margin-top: -20px;
+  width: 120%;
+  }
+}
+
 .carousel-item-content {
   height: 250px;
   /*background-color: #2a5298;*/
@@ -680,8 +752,13 @@ border-color: transparent;
 
 @media only screen and (max-width: 768px) {
  .carousel-item-content {
-  width: 60vb;
-  padding: 20px 40px;
+  padding: 30px;
+  height: 300px;
+  width: 100%;
+  }
+  .carousel-item-content p {
+  padding-top: 100px;
+  padding-bottom: 100px;
   }
 }
 
