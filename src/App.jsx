@@ -7,6 +7,7 @@ import Preloader from './components/Preloader/Preloader'
 import { CursorSpotLight } from './components/CursorSpotLight/CursorSpotLight';
 import Skills from './components/Skills';
 import About from './components/About';
+import Projects from './components/Projects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,7 @@ function App() {
          <Banner/>
          <Skills/>
          <About/>
+         <Projects/>
         </>
        )}
       

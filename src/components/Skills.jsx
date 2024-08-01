@@ -1,11 +1,126 @@
 import Tilt from 'react-parallax-tilt'; //a library for easy tilt components
+import { motion } from 'framer-motion';
 const Skills = () => {
+
+    //for framer motion animation
+    const slideInBottomVariants = {
+        hidden: {
+          y: '20%',
+          opacity: 0
+        },
+        visible: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 3.5,
+            ease: 'easeIn',
+            type: 'spring'
+          }
+        }
+      };
+
+      const zoomInVariants = {
+        hidden: {
+          transform: 'scale(0.1)',
+          opacity: 0
+        },
+        visible: {
+          opacity: 1,
+          transform: 'scale(1)',
+          transition: {
+            duration: 1,
+            ease: 'easeIn'
+          }
+        }
+      };
+
+
+    //card items values
+    const skills = [
+        {
+            title: 'React',
+            icon: 'devicon-react-original colored'
+        },
+        {
+            title: 'Next',
+            icon: 'devicon-nextjs-plain'
+        },
+        {
+            title: 'Node',
+            icon: 'devicon-nodejs-plain colored'
+        },
+        {
+            title: 'Express',
+            icon: 'devicon-express-original'
+        },
+        {
+            title: 'MongoDB',
+            icon: 'devicon-mongodb-plain colored'
+        },
+        {
+            title: 'Javascript',
+            icon: 'devicon-javascript-plain colored'
+        },
+        {
+            title: 'Typescript',
+            icon: 'devicon-typescript-plain colored'
+        },
+        {
+            title: 'GraphQL',
+            icon: 'devicon-graphql-plain colored'
+        },
+        {
+            title: 'Tailwind',
+            icon: 'devicon-tailwindcss-original colored'
+        },
+        {
+            title: 'Flutter',
+            icon: 'devicon-flutter-plain colored'
+        },
+        {
+            title: 'Kotlin',
+            icon: 'devicon-kotlin-plain colored'
+        },
+        {
+            title: 'Git',
+            icon: 'devicon-git-plain colored'
+        },
+        {
+            title: 'AWS',
+            icon: 'devicon-amazonwebservices-plain-wordmark colored'
+        },
+        {
+            title: 'Figma',
+            icon: 'devicon-figma-plain colored'
+        },
+        {
+            title: 'Jira',
+            icon: 'devicon-jira-plain colored'
+        },
+        {
+            title: 'Docker',
+            icon: 'devicon-docker-plain colored'
+        },
+        {
+            title: 'Selenium',
+            icon: 'devicon-selenium-original colored'
+        },
+        {
+            title: 'Jest',
+            icon: 'devicon-jest-plain colored'
+        }
+    ];
+
 
     return (
 
         <>
         <section className='skill'>
-        <div className='skill-bx animate'>
+        <motion.div className='skill-bx'
+        initial="hidden"
+        whileInView="visible"
+        variants={slideInBottomVariants}
+        >
         <h2 className='flow'  id="skills">Bag of Digital Tricks</h2>
         <br/>
         <p>Every wizard has their arsenal of spells, and I am no exception. Here are the magical languages <br/>
@@ -13,120 +128,23 @@ const Skills = () => {
         <br/>
 
         <div className='skill-tilt-area'>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
+        {skills.map((skill, index) => (
+        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px" key={index}>
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        >
         <div className='skill-item glowing'>
-        <i className="devicon-react-original colored" style={{fontSize : 52}}></i>
-            <h5>React</h5>
+        <i className={skill.icon} style={{fontSize : 52}}></i>
+            <h5>{skill.title}</h5>
         </div>
+        </motion.div>
         </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-nextjs-plain" style={{fontSize : 52}}></i>
-            <h5>Next</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-nodejs-plain colored" style={{fontSize : 52}}></i>
-            <h5>Node</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-express-original" style={{fontSize : 52}}></i>
-            <h5>Express</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-mongodb-plain colored" style={{fontSize : 52}}></i>
-            <h5>MongoDB</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item skill-item-mobile-hide glowing'>
-        <i className="devicon-javascript-plain colored" style={{fontSize : 52}}></i>
-            <h5>Javascript</h5>
-        </div>
-        </Tilt>
-
-
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-typescript-plain colored" style={{fontSize : 52}}></i>
-            <h5>Typescript</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-graphql-plain colored" style={{fontSize : 52}}></i>
-            <h5>GraphQL</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-tailwindcss-original colored" style={{fontSize : 52}}></i>
-            <h5>Tailwind</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-flutter-plain colored" style={{fontSize : 52}}></i>
-            <h5>Flutter</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-kotlin-plain colored" style={{fontSize : 52}}></i>
-            <h5>Kotlin</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-git-plain colored" style={{fontSize : 52}}></i>
-            <h5>Git</h5>
+        ))}
         </div>
 
-
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-amazonwebservices-plain-wordmark colored" style={{fontSize : 52}}></i>
-            <h5>AWS</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-figma-plain colored" style={{fontSize : 52}}></i>
-            <h5>Figma</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-jira-plain colored" style={{fontSize : 52}}></i>
-            <h5>Jira</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-docker-plain colored" style={{fontSize : 52}}></i>
-            <h5>Docker</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-selenium-original colored" style={{fontSize : 52}}></i>
-            <h5>Selenium</h5>
-        </div>
-        </Tilt>
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px">
-        <div className='skill-item glowing'>
-        <i className="devicon-jest-plain colored" style={{fontSize : 52}}></i>
-            <h5>Jest</h5>
-        </div>
-        </Tilt>
-        </div>
-        </div>
+        </motion.div>
         </section>
         </>
     )

@@ -13,7 +13,7 @@
   <h3 align="center" style="font-size: 42px;">Thajucp.in - Personal Portfolio</h3>
 
   <p align="center">
-    My persnal portfolio website created using React & React-bootstrap
+    My personal portfolio website created using React, React-bootstrap and Framer Motion.
     <br />
     <a href="https://thajucp.in/"><strong>Live Demo »</strong></a>
     <br />
@@ -184,6 +184,7 @@ LinkedIn: [https://linkedin.com/in/thaju-fakrudheen/](https://linkedin.com/in/th
 This is a list of useful resources and libraries I've used in my project. I've included a few of my favorites to kick things off!
 
 * [React Bootstrap](https://react-bootstrap.netlify.app/)
+* [Framer Motion](https://www.framer.com/motion/) - Animation library
 * [Bootsrap Icons](https://icons.getbootstrap.com/)
 * [React Parallax Tilt](https://github.com/mkosir/react-parallax-tilt/)
 * [Dev Icons](https://devicon.dev/) - set of icons representing programming languages, designing, and development tools
