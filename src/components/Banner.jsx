@@ -74,12 +74,18 @@ function Banner() {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
+                    <motion.span className="tagline"
+                    initial={{ y: '-200%', opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.7, ease: 'easeIn', type: 'tween' }}
+                    >
+                      Welcome to my portfolio
+                      </motion.span>
                     <motion.div className="banner-left"
                     initial={{ x: '-100%', opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: 'easeIn', type: 'tween' }}
                     >
-                    <span className="tagline">Welcome to my portfolio</span>
                     <h1>{`Hi, I'm Thajudeen, `}<br/>{`a `}<span className="wrap flow">{title}</span></h1>
                     <p>Greetings, Traveler! Enter the Realm of the Coding Wizard. I&apos;m a passionate full-stack web developer with a background in Computer Science. 
                     I&apos;m currently working as a Full Stack Developer at <a href="https://www.aes-inspection.com/" target="_blank" rel="noreferrer">AES</a> and I&apos;m looking for new opportunities.

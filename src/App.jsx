@@ -8,6 +8,7 @@ import { CursorSpotLight } from './components/CursorSpotLight/CursorSpotLight';
 import Skills from './components/Skills';
 import About from './components/About';
 import Projects from './components/Projects';
+import WhatsappButton from './components/WhatsappButton';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
          <Skills/>
          <About/>
          <Projects/>
+         <WhatsappButton/>
         </>
        )}
       

@@ -6,6 +6,7 @@ import logo from '../assets/img/Logo.svg';
 import navIcon1 from '../assets/img/linkedin.svg';
 import navIcon2 from '../assets/img/github-mark-white.svg';
 import navIcon3 from '../assets/img/insta.svg';
+import { motion } from 'framer-motion';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faFaceGrinWink } from '@fortawesome/free-regular-svg-icons';
 function NavBar() {
@@ -32,7 +33,7 @@ function NavBar() {
     return ( 
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" className='logo-section'>
           {//<FontAwesomeIcon icon={ faFaceGrinWink } style={{ color: '#FFFFFF' }} />
           }
           <img src= {logo} alt='logo' className='logo-img' />
@@ -47,14 +48,18 @@ function NavBar() {
             <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('projects')}>Projects</Nav.Link>
             <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('experience')}>Experience</Nav.Link>
           </Nav>
-          <span className="navbar-text">
+          <motion.span className="navbar-text"
+          initial={{ x: '100%', opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeIn', type: 'tween' }}
+          >
             <div className="social-icon">
                 <a href='#'><img src={navIcon1} alt=''/></a>
                 <a href='#'><img src={navIcon2} alt=''/></a>
                 <a href='#'><img src={navIcon3} alt=''/></a>
             </div>
             <button className="vvd" onClick={()=>{console.log("connect button click")}}><span>Let&apos;s Connect</span></button> 
-          </span>
+          </motion.span>
         </Navbar.Collapse>
       </Container>
     </Navbar>
