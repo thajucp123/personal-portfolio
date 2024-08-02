@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import About from './components/About';
 import Projects from './components/Projects';
 import WhatsappButton from './components/WhatsappButton';
+import JobExperience from './components/JobExperience';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,7 @@ function App() {
          <Skills/>
          <About/>
          <Projects/>
+         <JobExperience/>
          <WhatsappButton/>
         </>
        )}

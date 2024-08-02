@@ -129,7 +129,7 @@ const Skills = () => {
 
         <div className='skill-tilt-area'>
         {skills.map((skill, index) => (
-        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="lightblue" glarePosition="all" glareBorderRadius="20px" key={index}>
+        <Tilt glareEnable={true} glareMaxOpacity={0.9} glareColor="#0affaa" glarePosition="all" glareBorderRadius="20px" key={index}>
         <motion.div
         initial="hidden"
         whileInView="visible"
