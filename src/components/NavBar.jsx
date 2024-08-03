@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 //import { faFaceGrinWink } from '@fortawesome/free-regular-svg-icons';
 function NavBar() {
 
-    const [activeLink, setActiveLink] = useState('home'); //to determine which link is active
+  const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -24,7 +24,10 @@ function NavBar() {
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
+
     }, []);
+
+   
 
     const updateActiveLink = (link) => {
         setActiveLink(link);
@@ -43,7 +46,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('home')}>Home</Nav.Link>
+            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" :  "navbar-link"} onClick={()=>updateActiveLink('home')}>Home</Nav.Link>
             <Nav.Link href="#skills" className={activeLink == 'skills'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('skills')}>Skills</Nav.Link>
             <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('projects')}>Projects</Nav.Link>
             <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('experience')}>Experience</Nav.Link>
@@ -58,7 +61,9 @@ function NavBar() {
                 <a href='#'><img src={navIcon2} alt=''/></a>
                 <a href='#'><img src={navIcon3} alt=''/></a>
             </div>
-            <button className="vvd" onClick={()=>{console.log("connect button click")}}><span>Let&apos;s Connect</span></button> 
+            <a className='no-style-a' href="#connect">
+            <button className="vvd"><span>Let&apos;s Connect</span></button> 
+            </a>
           </motion.span>
         </Navbar.Collapse>
       </Container>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import pic from "../assets/img/projects/project-placeholder.jpg";
 import  bgleft from "../assets/img/color-sharp.png";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const projects = [
@@ -40,6 +39,7 @@ data, local bus timings, a complete blood bank database, and much more..`,
 ];
 
 const Projects = () => {
+
   return (
     <div className="projects-section" id='projects'>
     <motion.div
@@ -65,8 +65,8 @@ const Projects = () => {
                 <Card.Text className='project-para'>
                 {project.description}
                 </Card.Text>
-                <Button variant="primary" className='project-button'>Live Demo</Button>
-                <Button variant="primary" className='project-button'>Github repo</Button>
+                <button className='project-button'><span>Live Demo</span></button>
+                <button className='project-button'><span>Github Repo</span></button>
               </Card.Body>
             </motion.Card>
             

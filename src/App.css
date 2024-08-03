@@ -184,10 +184,16 @@ input:focus, textarea:focus, select:focus {
 
 p.success {
 	color: green;
+  display: inline;
+  padding: 25px;
+  font-size: 25px;
 }
 
 p.danger {
 	color: red;
+  display: inline;
+  padding: 25px;
+  font-size: 25px;
 }
 
 /************ Navbar Css ************/
@@ -625,7 +631,8 @@ border-color: transparent;
 
 @media only screen and (max-width: 768px) {
  .skills-background-image-right {
-  top: 48%;
+  top: 36%;
+  width: 90%;
   }
 }
 
@@ -799,13 +806,36 @@ border-color: transparent;
 
 .project-button {
   margin: 0 0 20px 20px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+
+  box-shadow: 
+    0.2em 0.2em 0 0 #19bc8b,
+    inset 0.2em 0.2em 0 0 #19bc8b;
+}
+.project-button span {
+  z-index: 1;
+  position: relative;
+}
+.project-button:hover {
+  background-color: #223030;
+  box-shadow: 
+    0.4em 0.2em 0 0 #7b19bc,
+    inset 0.4em 0.4em 0 0 #59a20a;
+  color: #c6fd8a;;
 }
 
+
 .projects-background-image-left {
-  top: 60%;
+  top: 45%;
   position: absolute;
   bottom: 0;
-  width: 75%;
+  width: 85%;
   left: 0;
   z-index: -4;
 }
@@ -971,15 +1001,11 @@ border-color: transparent;
     color: rgba(232, 255, 247, 0.4) !important;
   }
 
-.button-margin-top {
-  margin-top: 10px;
-}
-
 .contact-img {
   width: 90%;
 }
 
-.contact form button {
+.contact-button {
   font-weight: 700;
   color: #c6fd8a;
   padding: 14px 48px;
@@ -992,11 +1018,11 @@ border-color: transparent;
     0.3em 0.3em 0 0 #19bc8b,
     inset 0.3em 0.3em 0 0 #19bc8b;
 }
-.contact form button span {
+.contact-button span {
   z-index: 1;
   position: relative;
 }
-.contact form button:hover {
+.contact-button:hover {
   background-color: #223030;
   box-shadow: 
     0.4em 0.2em 0 0 #7b19bc,
@@ -1004,3 +1030,24 @@ border-color: transparent;
   color: #fff;
 }
 
+/*About section style*/
+.contact-background-image-right {
+  top: 80%;
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  right: 0;
+  z-index: -4;
+}
+
+@media only screen and (max-width: 768px) {
+ .contact-background-image-right {
+  top: 75%;
+  width: 90%;
+  }
+
+  .contact-title {
+    text-align: center;
+  }
+
+}

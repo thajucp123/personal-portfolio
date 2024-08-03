@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row, Form } from "react-bootstrap";
 import contactImg from "../assets/img/banner/portfolio-contact-img-lo.png";
+import bgright from "../assets/img/color-sharp2.png";
 import {motion, useAnimation} from "framer-motion";
 const Contact = ()=> {
 
-    /*const formDetails = {
+ const formDetails = {
         name: "",
         email: "",
         phone: "",
@@ -14,7 +15,7 @@ const Contact = ()=> {
    const [formData, setFormData] = useState(formDetails);
     const [buttonText, setButtonText] = useState("Send");
     const [status, setStatus] = useState({}); //to store the status of API call result
- */
+ 
 
     //for framer motion animation of image
     const controls = useAnimation();
@@ -38,12 +39,32 @@ const Contact = ()=> {
       startAnimation();
     }, [controls]);
 
+    //for handling form input data
+    const onFormUpdate = (category, value) => {
+        setFormData({
+            ...formData,
+            [category]: value,
+    });
+    };
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault();
+        console.log(formData);
+        setButtonText("Sending...");
+        setStatus({message: "success", success: true});
+        setFormData(formDetails); //clear the form data
+    };
+
     return(
-       <motion.section className="contact" id="contact"
+      <div>
+        <img src={bgright} className='contact-background-image-right'/>
+       <motion.section className="contact"
        initial={{ opacity: 0, y: 160 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
        >
+        
         <Container className="container-dark">
             <Row className="align-items-center">
                 <Col md={5}>
@@ -56,11 +77,12 @@ const Contact = ()=> {
                 </Col>
                 <Col md={7}>
                 <motion.div
+                className="contact-title"
                     initial={{ opacity: 0, y: -200 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: 'backInOut' , type: 'tween' }}
                 >
-                <h2 className="flow">Summon the Wizard</h2>
+                <h2 className="flow" id="connect">Summon the Wizard</h2>
                 <p>In need of a magical touch for your next project? Summon the coding wizard and <br/>let&apos;s work some magic together.</p>
                 </motion.div>
                 <Form className="contact-form">
@@ -70,7 +92,10 @@ const Contact = ()=> {
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                 >
                 <Form.Group controlId="formFullname">
-                    <Form.Control type="text" placeholder="Full name" required className="form-control-dark" />
+                    <Form.Control type="text" placeholder="Full name" required className="form-control-dark" 
+                     value={formData.name}
+                     onChange={(e)=> onFormUpdate('name', e.target.value)}
+                    />
                 </Form.Group>
                 </motion.div>
                 <Row>
@@ -81,7 +106,10 @@ const Contact = ()=> {
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                     >
                         <Form.Group controlId="formEmail">
-                            <Form.Control type="email" placeholder="Email" required className="form-control-dark" />
+                            <Form.Control type="email" placeholder="Email" required className="form-control-dark" 
+                            value={formData.email}
+                            onChange={(e)=> onFormUpdate('email', e.target.value)}
+                            />
                         </Form.Group>
                     </motion.div>
                     </Col>
@@ -92,7 +120,10 @@ const Contact = ()=> {
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                     >
                         <Form.Group controlId="formPhone">
-                            <Form.Control type="tel" placeholder="Phone number" required className="form-control-dark" />
+                            <Form.Control type="tel" placeholder="Phone number" required className="form-control-dark" 
+                            value={formData.phone}
+                            onChange={(e)=> onFormUpdate('phone', e.target.value)}
+                            />
                         </Form.Group>
                     </motion.div>
                     </Col>
@@ -104,7 +135,11 @@ const Contact = ()=> {
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                 >
                 <Form.Group controlId="formMessage">
-                    <Form.Control as="textarea" rows={6} placeholder="Enter your message" required className="form-control-dark" style={{resize : 'none'}} />
+                    <Form.Control as="textarea" rows={6} placeholder="Enter your message" required className="form-control-dark" 
+                    style={{resize : 'none'}} 
+                    value={formData.message}
+                     onChange={(e)=> onFormUpdate('message', e.target.value)}
+                    />
                 </Form.Group>
                 </motion.div>
 
@@ -113,15 +148,21 @@ const Contact = ()=> {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                 >
-                <button type="submit">
-                    <span>Send</span>
+                <button type="submit" className="contact-button" onClick={handleSubmit}>
+                    <span>{buttonText}</span>
                 </button>
+                {
+                    status.message && (
+                        <p className={`${status.success ? 'success' : 'danger'}`}>The message was {status.message}</p>
+                    )
+                }
                 </motion.div>
             </Form>
                 </Col>
             </Row>
         </Container>
        </motion.section>
+       </div>
     )
 }
 

@@ -104,7 +104,7 @@ function Banner() {
                         repeat: Infinity,
                       }}
                       >
-                      <a className="no-style-a"><span>Let&apos;s Connect <ArrowRightCircle size={25}/></span></a>
+                      <a className="no-style-a" href="#connect"><span>Let&apos;s Connect <ArrowRightCircle size={25}/></span></a>
                       </motion.button>
                     </motion.div>
                     </Col>

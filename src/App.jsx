@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from'react';
 import './App.css'
 import Banner from './components/Banner'
@@ -23,6 +22,7 @@ function App() {
     return () => clearTimeout(timer); // cleanup timer
   }, []);
 
+
   return (
     <div>
       {isLoading ?
@@ -44,4 +44,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
