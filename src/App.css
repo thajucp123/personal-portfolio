@@ -111,10 +111,12 @@ body {
   height: 50px;
   overflow: hidden;
   transition: width 0.5s;
+  z-index: 9999;
 }
 
 .whatsapp-text {
   padding-left: 10px;
+  z-index: 9999;
 }
 
 
@@ -813,7 +815,6 @@ border-color: transparent;
 .job-experience-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #0e0018;
 }
 
 @media only screen and (max-width: 768px) {
@@ -916,5 +917,90 @@ border-color: transparent;
 
 .experience-card:hover {
   transform: translateY(-10px);
+}
+
+
+/* ContactForm.css */
+.container-dark {
+  padding: 60px 30px 100px 30px !important;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-dark {
+    background: linear-gradient(90.21deg, #431a6d -5.91%, #2c1447 111.58%) !important;
+    width: 90% !important;
+    padding: 60px 5px 100px 5px !important;
+  }
+}
+
+.contact h2 {
+	font-size: 40px;
+	font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.form-control-dark {
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding: 18px 16px !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  letter-spacing: 0.8px !important;
+  transition: 0.3s ease-in-out !important;
+  margin: 10px 20px 10px 0;
+}
+
+.form-control-dark::placeholder { 
+  font-size: 15px !important;
+  font-weight: 100 !important;
+  color: #03e99c !important;
+  font-style: italic;
+  }
+
+  .form-control-dark:focus {
+    background: rgba(255, 255, 255, 0.336) !important;
+  }
+
+  .form-control-dark:focus::placeholder {
+    font-size: 10px !important;
+    color: rgba(232, 255, 247, 0.4) !important;
+  }
+
+.button-margin-top {
+  margin-top: 10px;
+}
+
+.contact-img {
+  width: 90%;
+}
+
+.contact form button {
+  font-weight: 700;
+  color: #c6fd8a;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin-top: 25px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+
+  box-shadow: 
+    0.3em 0.3em 0 0 #19bc8b,
+    inset 0.3em 0.3em 0 0 #19bc8b;
+}
+.contact form button span {
+  z-index: 1;
+  position: relative;
+}
+.contact form button:hover {
+  background-color: #223030;
+  box-shadow: 
+    0.4em 0.2em 0 0 #7b19bc,
+    inset 0.4em 0.4em 0 0 #59a20a;
+  color: #fff;
 }
 
