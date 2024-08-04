@@ -50,10 +50,26 @@ const Contact = ()=> {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        console.log(formData);
         setButtonText("Sending...");
-        setStatus({message: "success", success: true});
+        let response = await fetch("http://localhost:5000/send-email", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(formData),
+          });
+          setButtonText("Send");
+          let result = await response.json();
+        
         setFormData(formDetails); //clear the form data
+
+        if (result.code == 200) {
+            setStatus({ success: true, message: 'Message sent successfully'});
+          } else {
+            setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+          }
+          setButtonText("Send");
+        
     };
 
     return(
@@ -153,7 +169,7 @@ const Contact = ()=> {
                 </button>
                 {
                     status.message && (
-                        <p className={`${status.success ? 'success' : 'danger'}`}>The message was {status.message}</p>
+                        <p className={`${status.success ? 'success' : 'danger'}`}>{status.message}</p>
                     )
                 }
                 </motion.div>

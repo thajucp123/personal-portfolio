@@ -183,14 +183,14 @@ input:focus, textarea:focus, select:focus {
 }
 
 p.success {
-	color: green;
+	color: rgb(1, 179, 1);
   display: inline;
   padding: 25px;
   font-size: 25px;
 }
 
 p.danger {
-	color: red;
+	color: rgb(207, 28, 28);
   display: inline;
   padding: 25px;
   font-size: 25px;

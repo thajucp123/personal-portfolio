@@ -57,9 +57,15 @@ function NavBar() {
           transition={{ duration: 1, ease: 'easeIn', type: 'tween' }}
           >
             <div className="social-icon">
-                <a href='#'><img src={navIcon1} alt=''/></a>
-                <a href='#'><img src={navIcon2} alt=''/></a>
-                <a href='#'><img src={navIcon3} alt=''/></a>
+                <a href='https://www.linkedin.com/in/thaju-fakrudheen/' target='_blank' rel='noreferrer'>
+                <img src={navIcon1} alt='LinkedIN'/>
+                </a>
+                <a href='https://github.com/thajucp123' target='_blank' rel='noreferrer'>
+                  <img src={navIcon2} alt='Github'/>
+                  </a>
+                <a href='https://www.instagram.com/chaaju__/' target='_blank' rel='noreferrer'>
+                  <img src={navIcon3} alt='Instagram'/>
+                  </a>
             </div>
             <a className='no-style-a' href="#connect">
             <button className="vvd"><span>Let&apos;s Connect</span></button> 
