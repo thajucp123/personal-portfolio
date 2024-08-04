@@ -13,7 +13,7 @@
     ],
     "routes": [
       {
-        "src": "/send-email/(.*)",
+        "src": "/send-email/(.*)", 
         "dest": "/src/nodemailer/Server.js"
       },
       {
