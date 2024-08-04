@@ -56,7 +56,7 @@ const Contact = ()=> {
     
         try {
           let response = await Promise.race([
-            fetch("https://send-mail-personal-portfolio.vercel.app/send-email", {
+            fetch("/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json;charset=utf-8",

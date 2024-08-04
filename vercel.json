@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/nodemailer/Server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "src/Main.jsx",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "dist" }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/send-email/(.*)",
+        "dest": "/src/nodemailer/Server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/src/Main.jsx"
+      }
+    ]
+  }
+  

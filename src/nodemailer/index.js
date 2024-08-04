@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
   res.send('<center><br/><br/><h3>The app is at the <code>/send-email</code> route</h3></center>');
 });
 
-app.listen(5000, () => console.log("Server Running"));
+//app.listen(5000, () => console.log("Server Running"));
 //console.log(process.env.EMAIL_USER);
 //console.log(process.env.EMAIL_PASS);
 
@@ -76,3 +76,6 @@ router.post("/send-email", (req, res) => {
     }
   });
 });
+
+// Export the express app as a Vercel serverless function
+export default app;
