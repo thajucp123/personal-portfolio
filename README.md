@@ -111,16 +111,40 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Deployement
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+I have deployed this app in Vercel. the express app for sending contact form email using nodemailer is contained inside a subfolder called nodemailer.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For Vercel deploying, please refer to the [Documentation](https://vercel.com/docs)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+So, In Vercel.json file, I defined the routes and specified that our express app must be run as Vercel serverless node function and the root (Which is our react app) must run as static build:
+```json
+"builds": [
+      {
+        "src": "src/nodemailer/Server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "dist" }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/send-email/(.*)", 
+        "dest": "/src/nodemailer/Server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/src/main.jsx"
+      }
+    ]
 
+```
 <!-- ROADMAP -->
 ## Roadmap
 
