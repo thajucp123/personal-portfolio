@@ -38,7 +38,7 @@ contactEmail.verify((error) => {
   }
 });
 
-router.get("https://thaju-cp.vercel.app/send-email/", (req, res) => {
+router.get("send-email/", (req, res) => {
   if (Object.keys(req.body).length === 0) {
     res.send('<center><br/><br/><h3>Unauthorized entry to <code>/send-email</code> route</h3></center>');
   }

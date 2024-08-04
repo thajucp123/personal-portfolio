@@ -56,7 +56,7 @@ const Contact = ()=> {
     
         try {
           let response = await Promise.race([
-            fetch("/send-email", {
+            fetch("https://thaju-cp.vercel.app/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json;charset=utf-8",
