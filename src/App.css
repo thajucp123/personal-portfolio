@@ -196,6 +196,14 @@ p.danger {
   font-size: 25px;
 }
 
+@media only screen and (max-width: 768px) {
+  p.success,   p.danger {
+    display: block;
+    padding: 25px 10px;
+    font-size: 18px;
+  }
+}
+
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -985,6 +993,13 @@ border-color: transparent;
   margin: 10px 20px 10px 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .form-control-dark {
+    font-weight: 300 !important;
+  font-size: 15px !important;
+  }
+}
+
 .form-control-dark::placeholder { 
   font-size: 15px !important;
   font-weight: 100 !important;
@@ -1075,4 +1090,60 @@ border-color: transparent;
     text-align: center;
   }
 
+}
+
+.contact-email {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #ccc;
+  text-align: center;
+}
+
+.contact-email a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+
+/* interactive Cauldron fluid simluation */
+/* Parent container to position the cauldron and the canvas */
+.cauldron-container {
+  position: relative;
+  width: 630px; /* Adjust as needed */
+  height: 600px; /* Adjust as needed */
+  margin: 280px auto 10px auto; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 768px) {
+  .cauldron-container {
+    display: none;
+  }
+}
+
+/* Cauldron image styling */
+.cauldron-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure it is above the canvas */
+  pointer-events: none; /* Allows clicks to pass through to the canvas */
+}
+
+/* Canvas styling */
+.cauldron-canvas {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%; /* Makes the canvas circular */
+  clip-path: circle(50% at 50% 50%); /* Ensures the canvas is circular */
+  z-index: 0; /* Ensures it is below the cauldron image */
+  margin: 0 auto; /* Center the canvas */
+  padding: 50px;
+  
 }

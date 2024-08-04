@@ -125,6 +125,9 @@ const Contact = ()=> {
                 >
                 <img src={contactImg} alt="Contact Me" className="contact-img"/>
                 </motion.div>
+                <p className="contact-email">You may also contact me directly at &nbsp; 
+                  <a href="mailto:info@thajucp.in">info@thajucp.in</a>
+                </p>
                 </Col>
                 <Col md={7}>
                 <motion.div
