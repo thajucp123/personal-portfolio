@@ -46,15 +46,18 @@ router.get("/send-email", (req, res) => {
 )
 
 router.post("/send-email", (req, res) => {
- 
-  const name = req.body.name;
-  const email = req.body.email;
 
-  let message = JSON.parse(req.body.message);
+  const formData = JSON.parse(req.body);
+Object.keys(formData).forEach((key) => {
+  formData[key] = formData[key].replace(/\\n/g, '<br/>');
+});
+ 
+  const name = formData.name;
+  const email = formData.email;
+  const phone = formData.phone;
+  let message = formData.message;
   
-    message = message.replace(/\\n/g, '\n');
-  
-  const phone = req.body.phone;
+ 
   const mail = {
     from: process.env.EMAIL_USER,
     to: "td.cd.pd@gmail.com",
