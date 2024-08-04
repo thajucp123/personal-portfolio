@@ -56,15 +56,22 @@ const Contact = ()=> {
     
         const abortController = new AbortController();
         const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 seconds timeout
+
+        //following to avoid removing of new line characters when sending as json
+      const formDataWithMarkers = {};
+      Object.keys(formData).forEach((key) => {
+        formDataWithMarkers[key] = formData[key].replace(/\n/g, '\\n');
+      });
     
         try {
           let response = await Promise.race([
+            
             fetch("https://thaju-cp.vercel.app/send-email/", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json;charset=utf-8",
               },
-              body: JSON.stringify(formData),
+              body: JSON.stringify(formDataWithMarkers),
               signal: abortController.signal,
             }),
             new Promise((_, reject) =>

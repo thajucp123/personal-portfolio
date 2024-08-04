@@ -49,7 +49,11 @@ router.post("/send-email", (req, res) => {
  
   const name = req.body.name;
   const email = req.body.email;
-  const message = req.body.message;
+
+  let message = JSON.parse(req.body.message);
+  
+    message = message.replace(/\\n/g, '\n');
+  
   const phone = req.body.phone;
   const mail = {
     from: process.env.EMAIL_USER,
