@@ -99,6 +99,11 @@ const Contact = ()=> {
         } finally {
           setButtonText("Send");
           setButtonsDisabled(false);
+          let timer = setInterval(() => {
+            const obj = {}; // empty object
+            setStatus(obj);
+            clearInterval(timer); // stops the interval
+          }, 3000); 
         }
       };
 
