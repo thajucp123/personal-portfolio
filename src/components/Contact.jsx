@@ -65,7 +65,7 @@ const Contact = ()=> {
               signal: abortController.signal,
             }),
             new Promise((_, reject) =>
-              setTimeout(() => reject(new Error("Request timed out")), 10000) // 10 seconds timeout
+              setTimeout(() => reject(new Error("Request timed out")), 20000) // 20 seconds timeout
             ),
           ]);
     
@@ -84,7 +84,7 @@ const Contact = ()=> {
           if (error.name === 'AbortError') {
             setStatus({ success: false, message: 'Request timed out. Please try again later.' });
           } else {
-            setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+            setStatus({ success: false, message: error.message});
           }
         } finally {
           setButtonText("Send");
