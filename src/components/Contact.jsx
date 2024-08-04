@@ -84,7 +84,7 @@ const Contact = ()=> {
           if (error.name === 'AbortError') {
             setStatus({ success: false, message: 'Request timed out. Please try again later.' });
           } else {
-            setStatus({ success: false, message: error.message});
+            setStatus({ success: false, message: 'Failed to send message. Please try again later.' });
           }
         } finally {
           setButtonText("Send");

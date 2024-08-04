@@ -11,6 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
+
+router.get('/', (req, res) => {
+  res.send('<center><br/><br/><h3>The app is at the <code>/send-email</code> route</h3></center>');
+});
+
 app.listen(5000, () => console.log("Server Running"));
 //console.log(process.env.EMAIL_USER);
 //console.log(process.env.EMAIL_PASS);
@@ -20,8 +25,8 @@ console.log("Entered in the Server.js file");
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
+    user: process.env.EMAIL_USER, //environment variable
+    pass: process.env.EMAIL_PASS //environment variable
   },
 });
 
@@ -32,6 +37,13 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
+
+router.get("/send-email", (req, res) => {
+  if (Object.keys(req.body).length === 0) {
+    res.send('<center><br/><br/><h3>Unauthorized entry to <code>/send-email</code> route</h3></center>');
+  }
+}
+)
 
 router.post("/send-email", (req, res) => {
   const name = req.body.name;
