@@ -73,7 +73,7 @@ router.post("/send-email", (req, res) => {
     if (error) {
       res.json(error);
     } else {
-      res.json({ code: 200, status: "Message Sent" });
+      res.json({ code: 200, status: "Message Sent", envcheck: process.env.EMAIL_USER });
     }
   });
 });
