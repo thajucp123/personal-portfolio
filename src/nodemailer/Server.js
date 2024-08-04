@@ -47,15 +47,12 @@ router.get("/send-email", (req, res) => {
 
 router.post("/send-email", (req, res) => {
 
-  const formData = JSON.parse(req.body);
-Object.keys(formData).forEach((key) => {
-  formData[key] = formData[key].replace(/\\n/g, '<br/>');
-});
- 
-  const name = formData.name;
-  const email = formData.email;
-  const phone = formData.phone;
-  let message = formData.message;
+  const formData = req.body;
+  Object.keys(formData).forEach((key) => {
+    formData[key] = formData[key].replace(/\\n/g, '<br/>');
+  });
+
+  const { name, email, phone, message } = formData;
   
  
   const mail = {
