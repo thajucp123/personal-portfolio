@@ -50,6 +50,7 @@ const Contact = ()=> {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
+        e.setAttribute("disabled", "disabled");
     
         const abortController = new AbortController();
         const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 seconds timeout
@@ -78,7 +79,7 @@ const Contact = ()=> {
           if (result.code === 200) {
             setStatus({ success: true, message: 'Message sent successfully' });
           } else {
-            setStatus({ success: false, message: 'Something went wrong, please try again later.'+result.envcheck });
+            setStatus({ success: false, message: 'Something went wrong, please try again later.' });
           }
         } catch (error) {
           if (error.name === 'AbortError') {
@@ -88,6 +89,7 @@ const Contact = ()=> {
           }
         } finally {
           setButtonText("Send");
+          e.removeAttribute("disabled");
         }
       };
 
