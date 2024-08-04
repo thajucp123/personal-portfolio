@@ -15,6 +15,7 @@ const Contact = ()=> {
    const [formData, setFormData] = useState(formDetails);
     const [buttonText, setButtonText] = useState("Send");
     const [status, setStatus] = useState({}); //to store the status of API call result
+    const [buttonsDisabled, setButtonsDisabled] = useState(false);
  
 
     //for framer motion animation of image
@@ -50,7 +51,8 @@ const Contact = ()=> {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText("Sending...");
-        e.setAttribute("disabled", "disabled");
+        setButtonsDisabled(true);
+       
     
         const abortController = new AbortController();
         const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 seconds timeout
@@ -71,7 +73,7 @@ const Contact = ()=> {
           ]);
     
           clearTimeout(timeoutId);
-          setButtonText("Send");
+          
     
           let result = await response.json();
           setFormData(formDetails); // Clear the form data
@@ -89,7 +91,7 @@ const Contact = ()=> {
           }
         } finally {
           setButtonText("Send");
-          e.removeAttribute("disabled");
+          setButtonsDisabled(false);
         }
       };
 
@@ -185,7 +187,7 @@ const Contact = ()=> {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2, ease: 'backInOut' , type: 'spring' }}
                 >
-                <button type="submit" className="contact-button" onClick={handleSubmit}>
+                <button type="submit" className="contact-button" onClick={handleSubmit} disabled={buttonsDisabled}>
                     <span>{buttonText}</span>
                 </button>
                 {
