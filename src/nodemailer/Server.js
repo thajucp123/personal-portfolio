@@ -46,8 +46,7 @@ router.get("/send-email", (req, res) => {
 )
 
 router.post("/send-email", (req, res) => {
-  res.json({ code: 200, status: "Message Sent" });
-  /*
+ 
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
@@ -76,7 +75,7 @@ router.post("/send-email", (req, res) => {
     } else {
       res.json({ code: 200, status: "Message Sent" });
     }
-  });*/
+  });
 });
 
 // Export the express app as a Vercel serverless function
