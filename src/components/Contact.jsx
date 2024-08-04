@@ -48,29 +48,48 @@ const Contact = ()=> {
     };
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
         setButtonText("Sending...");
-        let response = await fetch("http://localhost:5000/send-email", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(formData),
-          });
+    
+        const abortController = new AbortController();
+        const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 seconds timeout
+    
+        try {
+          let response = await Promise.race([
+            fetch("http://localhost:5000/send-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json;charset=utf-8",
+              },
+              body: JSON.stringify(formData),
+              signal: abortController.signal,
+            }),
+            new Promise((_, reject) =>
+              setTimeout(() => reject(new Error("Request timed out")), 10000) // 10 seconds timeout
+            ),
+          ]);
+    
+          clearTimeout(timeoutId);
           setButtonText("Send");
+    
           let result = await response.json();
-        
-        setFormData(formDetails); //clear the form data
-
-        if (result.code == 200) {
-            setStatus({ success: true, message: 'Message sent successfully'});
+          setFormData(formDetails); // Clear the form data
+    
+          if (result.code === 200) {
+            setStatus({ success: true, message: 'Message sent successfully' });
           } else {
-            setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+            setStatus({ success: false, message: 'Something went wrong, please try again later.' });
           }
+        } catch (error) {
+          if (error.name === 'AbortError') {
+            setStatus({ success: false, message: 'Request timed out. Please try again later.' });
+          } else {
+            setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+          }
+        } finally {
           setButtonText("Send");
-        
-    };
+        }
+      };
 
     return(
       <div>
