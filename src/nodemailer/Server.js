@@ -61,7 +61,7 @@ router.post("/send-email", (req, res) => {
     cc: "thajucp123@gmail.com",
     subject: "Contact Form Submission - Thajucp.in Portfolio",
     html: `
-        <div style="font-family: Georgia, serif; font-size: 12pt; line-height: 1.6; color: #333; background-color: #f2f2f2; padding: 20px;">
+        <div style="font-family: Georgia, serif; font-size: 11pt; line-height: 1.6; color: #333; background-color: #f2f2f2; padding: 20px;">
         <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
           <h2 style="color: #0056b3; margin: 3px auto; text-align: center;">New Contact Form Submission from <a href="https://www.thajucp.in/" target="_blank" style="color: #0056b3; text-decoration: underline;">Thajucp.in</a></h2>
           <p><strong>Name:</strong> <br/>${name}</p>

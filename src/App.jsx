@@ -11,6 +11,7 @@ import WhatsappButton from './components/WhatsappButton';
 import JobExperience from './components/JobExperience';
 import Contact from './components/Contact';
 import FluidSimulation from './components/FluidSimulation';
+import Footer from './components/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
          <JobExperience/>
          <Contact/>
          <FluidSimulation/>
+         <Footer/>
          <WhatsappButton/>
         </>
        )}

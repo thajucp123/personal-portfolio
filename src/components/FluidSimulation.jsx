@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import cauldronImage from "../assets/img/banner/caultron-lo.png";
 
 const FluidSimulation = () => {
@@ -737,12 +738,18 @@ const FluidSimulation = () => {
   //return <canvas ref={canvasRef} style={{ width: '100%', height: '100vh' }} />;
   return (
     <div className="cauldron-container">
+      <motion.div
+        initial={{ x: '-100%', opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeIn', type: 'spring' }}
+        >
         <quote className='flow'>{`"The cauldron is the place where all the magic happens."`}</quote>
         <h3 className='flow'>{`Oh! you've come so far. Now have a play around in my magical cauldron.`}</h3>
         <span style={{margin:'25px 0', display:'block'}} className='flow'>(Just click and drag inside the cauldron.)</span>
+      </motion.div>
              <br/>
-      <canvas ref={canvasRef} className="cauldron-canvas"></canvas>
-      <img src={cauldronImage} alt="Cauldron" className="cauldron-image" />
+        <canvas ref={canvasRef} className="cauldron-canvas"></canvas>
+        <img src={cauldronImage} alt="Cauldron" className="cauldron-image" />
     </div>
   );
 

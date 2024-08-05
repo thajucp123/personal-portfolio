@@ -45,12 +45,48 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+        
           <Nav className="me-auto">
-            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" :  "navbar-link"} onClick={()=>updateActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#skills" className={activeLink == 'skills'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('skills')}>Skills</Nav.Link>
-            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('projects')}>Projects</Nav.Link>
-            <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('experience')}>Experience</Nav.Link>
+          
+            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" :  "navbar-link"} onClick={()=>updateActiveLink('home')}>
+            <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'backInOut', type: 'tween' }}
+            >
+              Home
+              </motion.span>
+              </Nav.Link>
+            <Nav.Link href="#skills" className={activeLink == 'skills'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('skills')}>
+            <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: 'backInOut', type: 'tween' }}
+            > 
+              Skills
+              </motion.span>
+              </Nav.Link>
+            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('projects')}>
+            <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.6, ease: 'backInOut', type: 'tween' }}
+            > 
+              Projects
+              </motion.span>
+              </Nav.Link>
+            <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('experience')}>
+            <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2, ease: 'backInOut', type: 'tween' }}
+            > 
+              Experience
+              </motion.span>
+              </Nav.Link>
+            
           </Nav>
+        
           <motion.span className="navbar-text"
           initial={{ x: '100%', opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
