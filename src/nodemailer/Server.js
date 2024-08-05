@@ -61,15 +61,19 @@ router.post("/send-email", (req, res) => {
     cc: "thajucp123@gmail.com",
     subject: "Contact Form Submission - Thajucp.in Portfolio",
     html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <h2 style="color: #0056b3;">New Contact Form Submission from <a href="https://www.thajucp.in/" target="_blank">Thajucp.in</a></h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Message:</strong></p>
-            <p style="background-color: #f9f9f9; padding: 25px 10px; border-left: 4px solid #0056b3;">${message}</p>
-            <hr style="border: none; border-top: 1px solid #ccc;">
-            <p style="font-size: 0.9em; color: #666;">This email was sent from the contact form on Thajucp.in Portfolio.</p>
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f2f2f2; padding: 20px;">
+        <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h2 style="color: #0056b3;">New Contact Form Submission from <a href="https://www.thajucp.in/" target="_blank" style="color: #0056b3; text-decoration: none;">Thajucp.in</a></h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #0056b3; text-decoration: none;">${email}</a></p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Message:</strong></p>
+          <div style="background-color: #f9f9f9; padding: 15px 10px; border-left: 4px solid #0056b3; margin-bottom: 20px;">
+            ${message}
+          </div>
+          <hr style="border: none; border-top: 1px solid #ccc;">
+          <p style="font-size: 0.9em; color: #666;">This email was sent from the contact form on Thajucp.in Portfolio.</p>
+        </div>
         </div>
         `,
   };
@@ -77,7 +81,7 @@ router.post("/send-email", (req, res) => {
     if (error) {
       res.json(error);
     } else {
-      res.json({ code: 200, status: "Message Sent", envcheck: process.env.EMAIL_USER });
+      res.json({ code: 200, status: "Message Sent"});
     }
   });
 });

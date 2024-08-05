@@ -16,6 +16,9 @@ const Contact = ()=> {
     const [buttonText, setButtonText] = useState("Send");
     const [status, setStatus] = useState({}); //to store the status of API call result
     const [buttonsDisabled, setButtonsDisabled] = useState(false);
+
+    const successSound = new Audio('/src/assets/sound/success.mp3');
+    const errorSound = new Audio('/src/assets/sound/error.mp3');
  
 
     //for framer motion animation of image
@@ -87,14 +90,18 @@ const Contact = ()=> {
     
           if (result.code === 200) {
             setStatus({ success: true, message: 'Message sent successfully' });
+            successSound.play();
           } else {
             setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+            errorSound.play();
           }
         } catch (error) {
           if (error.name === 'AbortError') {
             setStatus({ success: false, message: 'Request timed out. Please try again later.' });
+            errorSound.play();
           } else {
             setStatus({ success: false, message: 'Failed to send message. Please try again later.' });
+            errorSound.play();
           }
         } finally {
           setButtonText("Send");

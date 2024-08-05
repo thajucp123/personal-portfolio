@@ -737,7 +737,7 @@ const FluidSimulation = () => {
   //return <canvas ref={canvasRef} style={{ width: '100%', height: '100vh' }} />;
   return (
     <div className="cauldron-container">
-        <quote className='flow'>{`The cauldron is the place where all the magic happens.`}</quote>
+        <quote className='flow'>{`"The cauldron is the place where all the magic happens."`}</quote>
         <h3 className='flow'>{`Oh! you've come so far. Now have a play around in my magical cauldron.`}</h3>
         <span style={{margin:'25px 0', display:'block'}} className='flow'>(Just click and drag inside the cauldron.)</span>
              <br/>
