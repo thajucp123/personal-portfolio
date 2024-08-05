@@ -18,8 +18,8 @@ const Contact = () => {
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
   const [errors, setErrors] = useState({}); // to store form validation errors
 
-  const successSound = new Audio('/src/assets/sound/success.mp3');
-  const errorSound = new Audio('/src/assets/sound/error.mp3');
+  const successSound = new Audio('/sound/success.mp3');
+  const errorSound = new Audio('/sound/error.mp3');
 
   // for framer motion animation of image
   const controls = useAnimation();
