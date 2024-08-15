@@ -494,7 +494,7 @@ border-color: transparent;
 .banner p {
   color: #eae8e8;
   font-size: 1.125rem;
-  letter-spacing: 0.0.5rem;
+  letter-spacing: 0.05rem;
   line-height: 1.5em;
   width: 96%;
   text-shadow: -1px 0 rgb(61, 61, 61), 1px 0 rgb(39, 39, 39), 0 -1px rgb(132, 132, 132), 0 1px rgb(81, 81, 81);
@@ -1123,7 +1123,7 @@ align-content: flex-start;
 
 /*About section style*/
 .contact-background-image-right {
-  top: 80%;
+  top: 75%;
   position: absolute;
   bottom: 0;
   width: 45%;
