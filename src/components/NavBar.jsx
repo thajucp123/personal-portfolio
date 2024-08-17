@@ -15,23 +15,52 @@ function NavBar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => { //this method is used to determine if user scrolls the page and change the navbar BG accordingly
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+      const onScroll = () => {
+        if (window.scrollY > 50) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
         }
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+  
+        // Your existing handleScroll logic
+        const sections = document.querySelectorAll('section');
+        const top = window.scrollY + 100; // Add 100 to account for navbar height
+  
+        sections.forEach((section) => {
+          if (section.offsetTop <= top && section.offsetTop + section.offsetHeight > top) {
+            const id = section.id; // Get the ID of the section element
+            setActiveLink(id);
+          }
+        });
+      };
+  
+      window.addEventListener('scroll', onScroll);
 
+      const handleHashChange = () => {
+        const hash = window.location.hash;
+        switch (hash) {
+          case '#home':
+            setActiveLink('home');
+            break;
+          case '#skills':
+            setActiveLink('skills');
+            break;
+          case '#projects':
+            setActiveLink('#projects');
+            break;
+          case '#experience':
+            setActiveLink('experience');
+            break;
+          default:
+            setActiveLink('home');
+        }
+      };
+
+      return () => {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('hashchange', handleHashChange);
+      }
     }, []);
-
-   
-
-    const updateActiveLink = (link) => {
-        setActiveLink(link);
-    }
 
     return ( 
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
@@ -48,7 +77,7 @@ function NavBar() {
         
           <Nav className="me-auto">
           
-            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" :  "navbar-link"} onClick={()=>updateActiveLink('home')}>
+            <Nav.Link href="#home" className={activeLink == 'home'? "active navbar-link" :  "navbar-link"}>
             <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -57,7 +86,7 @@ function NavBar() {
               Home
               </motion.span>
               </Nav.Link>
-            <Nav.Link href="#skills" className={activeLink == 'skills'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('skills')}>
+            <Nav.Link href="#skills" className={activeLink == 'skills'? "active navbar-link" : "navbar-link"}>
             <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -66,7 +95,7 @@ function NavBar() {
               Skills
               </motion.span>
               </Nav.Link>
-            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('projects')}>
+            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>setActiveLink('')}>
             <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -75,7 +104,7 @@ function NavBar() {
               Projects
               </motion.span>
               </Nav.Link>
-            <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"} onClick={()=>updateActiveLink('experience')}>
+            <Nav.Link href="#experience" className={activeLink == 'experience'? "active navbar-link" : "navbar-link"}>
             <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

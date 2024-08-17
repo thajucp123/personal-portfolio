@@ -115,13 +115,13 @@ const Skills = () => {
     return (
 
         <>
-        <section className='skill'>
+        <section className='skill' id="skills">
         <motion.div className='skill-bx'
         initial="hidden"
         whileInView="visible"
         variants={slideInBottomVariants}
         >
-        <h2 className='flow'  id="skills">Bag of Digital Tricks</h2>
+        <h2 className='flow'>Bag of Digital Tricks</h2>
         <br/>
         <p>Every wizard has their arsenal of spells, and I am no exception. Here are the magical languages <br/>
             and frameworks I wield to craft enchanted digital experiences</p>

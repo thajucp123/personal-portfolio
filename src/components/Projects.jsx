@@ -41,7 +41,7 @@ data, local bus timings, a complete blood bank database, and much more..`,
 const Projects = () => {
 
   return (
-    <div className="projects-section" id='projects'>
+    <section className="projects-section" id='projects'>
     <motion.div
     initial={{ x: '-100%', opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
@@ -73,7 +73,7 @@ const Projects = () => {
       ))}
 <img src={bgleft} className='projects-background-image-left'/>
     </div>
-    </div>
+    </section>
   );
 };
 

@@ -13,7 +13,7 @@ const experiences = [
 const JobExperience = () => {
 
   return (
-    <div className="job-experience-section" id='experience'>
+    <section className="job-experience-section" id='experience'>
         <motion.div
         initial={{ x: '-100%', opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -44,7 +44,7 @@ const JobExperience = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
