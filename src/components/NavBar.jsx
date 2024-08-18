@@ -22,45 +22,46 @@ function NavBar() {
           setScrolled(false);
         }
   
-        // Your existing handleScroll logic
-        const sections = document.querySelectorAll('section');
-        const top = window.scrollY + 100; // Add 100 to account for navbar height
-  
-        sections.forEach((section) => {
-          if (section.offsetTop <= top && section.offsetTop + section.offsetHeight > top) {
-            const id = section.id; // Get the ID of the section element
-            setActiveLink(id);
-          }
-        });
-      };
-  
-      window.addEventListener('scroll', onScroll);
-
-      const handleHashChange = () => {
-        const hash = window.location.hash;
-        switch (hash) {
-          case '#home':
-            setActiveLink('home');
-            break;
-          case '#skills':
-            setActiveLink('skills');
-            break;
-          case '#projects':
-            setActiveLink('#projects');
-            break;
-          case '#experience':
-            setActiveLink('experience');
-            break;
-          default:
-            setActiveLink('home');
+          const sections = document.querySelectorAll('section');
+          const top = window.scrollY + 100; // Add 100 to account for navbar height
+      
+          sections.forEach((section) => {
+            if (section.offsetTop <= top && section.offsetTop + section.offsetHeight > top) {
+              const id = section.id;
+              setActiveLink(id);
+            }
+          });
         }
-      };
+      
+        window.addEventListener('scroll', onScroll);
+
+        const handleHashChange = () => {
+          const hash = window.location.hash;
+          switch (hash) {
+            case '#home':
+              setActiveLink('home');
+              break;
+            case '#skills':
+              setActiveLink('skills');
+              break;
+            case '#projects':
+              setActiveLink('projects');
+              break;
+            case '#experience':
+                setActiveLink('experience');
+                break;
+            default:
+              setActiveLink('home');
+          }
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
 
       return () => {
         window.removeEventListener('scroll', onScroll);
         window.removeEventListener('hashchange', handleHashChange);
       }
-    }, []);
+    }, [activeLink]);
 
     return ( 
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
@@ -95,7 +96,7 @@ function NavBar() {
               Skills
               </motion.span>
               </Nav.Link>
-            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"} onClick={()=>setActiveLink('')}>
+            <Nav.Link href="#projects" className={activeLink == 'projects'? "active navbar-link" : "navbar-link"}>
             <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

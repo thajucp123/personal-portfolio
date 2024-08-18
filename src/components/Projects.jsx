@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import pic from "../assets/img/projects/project-placeholder.jpg";
+import seashore from "../assets/img/projects/seashore.jpg";
 import  bgleft from "../assets/img/color-sharp.png";
 import Card from 'react-bootstrap/Card';
 
@@ -22,11 +23,11 @@ data, local bus timings, a complete blood bank database, and much more..`,
     github: '#'
   },
   {
-    title: 'Project 3',
-    description: `Exploring the cosmos is a fascinating journey that reveals the universe's vast mysteries. With advanced telescopes, we can observe distant galaxies, stars, and planets, unraveling secrets of dark matter, black holes, and the cosmic dance of celestial bodies, ultimately illuminating our understanding of the universe's grand tapestry and humanity's place within it.`,    
-    image: pic,
+    title: 'Seashore Mediclinic',
+    description: `The Seashore Medclinic website is a responsive and user-friendly online platform I have created to showcase the medical services and facilities offered by Seashore Medclinic. Built using React, this website aims to provide an exceptional user experience, making it easy for patients to find contact information, book appointments, and access medical care.`,    
+    image: seashore,
     live: '#',
-    github: '#'
+    github: 'https://github.com/thajucp123/seashore-mediclinic'
   },
   {
     title: 'Project 4',
@@ -59,14 +60,14 @@ const Projects = () => {
         initial={{ opacity: 0, y: 160 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, ease: 'backInOut' , type: 'spring' }}>
-              <Card.Img variant="top" src={project.image} />
+              <Card.Img variant="top" src={project.image}/>
               <Card.Body className='card-content'>
                 <Card.Title className='project-title'>{project.title}</Card.Title>
                 <Card.Text className='project-para'>
                 {project.description}
                 </Card.Text>
                 <button className='project-button'><span>Live Demo</span></button>
-                <button className='project-button'><span>Github Repo</span></button>
+                <button className='project-button'><a href={project.github} className='no-style-a'><span>Github Repo</span></a></button>
               </Card.Body>
             </motion.Card>
             
